@@ -1,5 +1,5 @@
 const url = "https://wind-bow.glitch.me/twitch-api/streams/";
-const user = ["xbox_alive", "freecodecamp", "yo_boy_roy", "rainbow6", "starladder_cs_en", "break"];
+const user = ["freecodecamp", "yo_boy_roy", "rainbow6", "kixstar", "shroud", "break"];
 const urlEnd = "?callback=";
 const test = url + user[5] + urlEnd;
 
@@ -16,3 +16,15 @@ fetch(test)
   .catch(function(error) {
     console.log("Something went wrong " + error);
   })
+
+/*
+- If online then changed offline to online
+*/
+
+const status = document.getElementsByClassName("stream-status");
+
+function changeStatus() {
+    status[1].innerHTML = "Online";
+}
+
+changeStatus();

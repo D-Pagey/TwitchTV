@@ -6,7 +6,7 @@
 
 .main-container {
   margin: 50px auto;
-  width: 50%;
+  width: 75%;
   height: 500px;
   display: flex;
   flex-direction: column;
@@ -35,4 +35,8 @@
   padding: 5px 10px;
   margin: 5px 0;
   background-color: white;
+}
+
+.stream-description {
+  font-style: italic;
 }
