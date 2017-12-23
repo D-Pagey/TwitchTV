@@ -1,30 +1,30 @@
 const url = "https://wind-bow.glitch.me/twitch-api/streams/";
 const user = ["freecodecamp", "yo_boy_roy", "rainbow6", "kixstar", "shroud", "break"];
 const urlEnd = "?callback=";
-const test = url + user[5] + urlEnd;
+const status = document.getElementsByClassName("stream-status--offline");
+
+// console.log(status);
 
 function extractJson(data) {
   return data.json();
 }
 
-fetch(test)
-  .then(extractJson)
-  .then(function(data) {
-    console.log(data);
-  })
+user.forEach(function(element) {
 
-  .catch(function(error) {
-    console.log("Something went wrong " + error);
-  })
+const finalUrl = url + element + urlEnd;
 
-/*
-- If online then changed offline to online
-*/
+  fetch(finalUrl)
+    .then(extractJson)
+    .then(function(data) {
+      console.log(data);
+      if (data.stream != null) {
+        console.log("online");
+        // status[1].className = "stream-status--online";
+      }
+    })
 
-const status = document.getElementsByClassName("stream-status");
+    .catch(function(error) {
+      console.log("Something went wrong " + error);
+    })
 
-function changeStatus() {
-    status[1].innerHTML = "Online";
-}
-
-changeStatus();
+});
