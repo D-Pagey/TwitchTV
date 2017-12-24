@@ -15,7 +15,7 @@
   align-items: center;
   border: 2px solid black;
   border-radius: 5px;
-  background-color: #D2FFC4;
+  background-color: #BE90D4;
 }
 
 .main-title {
@@ -54,5 +54,6 @@
 }
 
 .stream-status--online {
-  color: blue;
+  color: green;
+  font-weight: 600;
 }
