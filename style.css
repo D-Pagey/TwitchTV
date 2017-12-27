@@ -2,14 +2,13 @@
   font-family: 'Montserrat', sans-serif;
   margin: 0;
   padding: 0;
-  font-size: 25px;
+  font-size: 18px;
 }
 
 .main-container {
   margin: 2em auto;
   width: 90%;
-  /* min-width: 525px;
-  max-width: 800px; */
+  height: 900px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -19,11 +18,11 @@
 }
 
 .main-title {
-  font-size: 2em;
+  font-size: 3em;
   border: 2px solid black;
   border-radius: 5px;
   margin: 0.5em 0;
-  padding: 5px 10px;
+  padding: 10px 15px 5px;
   background-color: white;
 }
 
@@ -31,40 +30,45 @@
   display: flex;
   align-items: center;
   width: 90%;
-  height: 2.25em;
+  height: 3em;
   border: 2px solid black;
   border-radius: 5px;
   padding: 5px 10px;
-  margin: 5px 0;
+  margin: 10px 0;
   background-color: white;
 }
 
 .stream-title {
+  font-size: 1.65em;
   flex-grow: 1;
   max-width: 35%;
 }
 
 .stream-description {
   font-style: italic;
+  font-size: 1.35em;
   flex-grow: 1;
-  max-width: 50%;
+  max-width: 55%;
 }
 
-.stream-description--online {
+.stream-description-online {
   color: blue;
+  font-size: 1.35em;
 }
 
 .stream-link {
   text-decoration: none;
   flex-grow: 1;
-  max-width: 50%;
+  max-width: 55%;
 }
 
-.stream-status--offline {
+.stream-status-offline {
   color: red;
+  font-size: 1.35em;
 }
 
-.stream-status--online {
+.stream-status-online {
   color: green;
   font-weight: 600;
+  font-size: 1.35em;
 }
