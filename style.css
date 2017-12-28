@@ -2,13 +2,12 @@
   font-family: 'Montserrat', sans-serif;
   margin: 0;
   padding: 0;
-  font-size: 20px;
+  font-size: 14px;
 }
 
 .main-container {
-  margin: 2em auto;
+  margin: 0.5em auto;
   width: 95%;
-  height: 1000px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -18,54 +17,108 @@
 }
 
 .main-title {
-  font-size: 3em;
   border: 2px solid black;
   border-radius: 5px;
   margin: 0.5em 0;
-  padding: 10px 15px 5px;
+  padding: 0.5em;
+  font-size: 1.5em;
   background-color: white;
 }
 
 .stream-container {
   display: flex;
-  align-items: center;
-  width: 92.5%;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-content: space-around;
+  width: 95%;
   height: 4em;
+  margin: 0.5em 0;
   border: 2px solid black;
   border-radius: 5px;
-  padding: 5px 10px;
-  margin: 12.5px 0;
   background-color: white;
 }
 
 .stream-title {
-  font-size: 1.65em;
-  width: 9em;
+  order: 0;
+  width: 100%;
+  font-size: 1em;
+  text-align: center;
 }
 
 .stream-link {
-  text-decoration: none;
+  order: 1;
   flex-grow: 1;
+  padding-left: 0.5em;
+  text-decoration: none;
 }
 
 .stream-description-offline {
-  font-style: italic;
-  font-size: 1.5em;
+  order: 1;
   flex-grow: 1;
+  font-style: italic;
+  padding-left: 0.5em;
 }
 
 .stream-description-online {
   color: blue;
-  font-size: 1.5em;
 }
 
 .stream-status-offline {
+  order: 1;
+  padding-right: 0.5em;
   color: red;
-  font-size: 1.45em;
 }
 
 .stream-status-online {
+  order: 1;
+  padding-right: 0.5em;
   color: green;
   font-weight: 600;
-  font-size: 1.45em;
+}
+
+/* Media Queries: iPad */
+@media only screen and (min-width: 600px) and (max-width: 800px) {
+
+  * {
+    font-size: 16px;
+  }
+
+  .main-container {
+    margin: 1.5em auto;
+    width: 90%;
+  }
+
+  .stream-container {
+    width: 90%;
+    height: 3em;
+    align-items: center;
+  }
+
+  .stream-title {
+    width: 32.5%;
+    font-size: 1.2em;
+  }
+
+  .stream-link {
+    padding: 0;
+    font-size: 1.1em;
+  }
+
+  .stream-description-offline {
+    padding: 0;
+    font-size: 1.1em;
+  }
+
+  .stream-status-offline {
+    padding: 0;
+    width: 12.5%;
+    text-align: center;
+  }
+
+  .stream-status-online {
+    padding: 0;
+    width: 12.5%;
+    text-align: center;
+  }
+
 }

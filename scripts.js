@@ -23,7 +23,7 @@ function createLink(data) {
     link.className = "stream-link";
 
 
-    status.innerHTML = data.stream.channel.status.slice(0, 25) + "...";
+    status.innerHTML = data.stream.channel.status.slice(0, 27) + "...";
     status.className = "stream-description-online";
     link.appendChild(status);
     div.insertBefore(link, stream);
