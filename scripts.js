@@ -1,5 +1,5 @@
 const url = "https://wind-bow.glitch.me/twitch-api/streams/";
-const user = ["pengu", "tangyd", "panky", "wingsofredemption"];
+const user = ["freecodecamp", "macie_jay", "yo_boy_roy", "rainbow6", "p4wnyhof", "tsm_viss", "edberg"];
 const urlEnd = "?callback=";
 
 function extractJson(data) {
@@ -11,8 +11,6 @@ function createLink(data) {
   const status = document.getElementById(data.stream.channel.name + "-stream");
   const div = document.getElementById(data.stream.channel.name + "-div")
 
-  console.log(status);
-
   if (data.stream) {
     console.log(data);
 
@@ -20,20 +18,19 @@ function createLink(data) {
     stream.innerHTML = "Online";
 
     const link = document.createElement('a');
-    link.href = "https://www.twitch.tv/" + data.stream.channel.name;
+    link.href = data.stream.channel.url;
     link.target = "_blank";
     link.className = "stream-link";
 
 
-    status.innerHTML = data.stream.channel.status.slice(0, 30) + "...";
+    status.innerHTML = data.stream.channel.status.slice(0, 25) + "...";
     status.className = "stream-description-online";
     link.appendChild(status);
     div.insertBefore(link, stream);
   }
 }
 
-
-
+// Fetch each channels stream data
 user.forEach(function(element) {
 
 const finalUrl = url + element + urlEnd;
