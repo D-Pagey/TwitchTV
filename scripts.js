@@ -6,7 +6,7 @@ function extractJson(data) {
   return data.json();
 }
 
-function createLink(data) {
+function displayInfo(data) {
   const stream = document.getElementById(data.stream.channel.name);
   const status = document.getElementById(data.stream.channel.name + "-stream");
   const div = document.getElementById(data.stream.channel.name + "-div")
@@ -21,7 +21,6 @@ function createLink(data) {
     link.href = data.stream.channel.url;
     link.target = "_blank";
     link.className = "stream-link";
-
 
     status.innerHTML = data.stream.channel.status.slice(0, 27) + "...";
     status.className = "stream-description-online";
@@ -38,7 +37,7 @@ const finalUrl = url + element + urlEnd;
   fetch(finalUrl)
     .then(extractJson)
     .then(function(data) {
-      createLink(data);
+      displayInfo(data);
     })
 
     .catch(function(error) {
