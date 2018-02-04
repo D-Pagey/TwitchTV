@@ -9,12 +9,41 @@
 
     <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="style.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
   </head>
 
   <body>
 
+    <!-- Streams -->
     <div class="main-container">
+
+      <!-- Modal -->
+      <div class="modal-container">
+        <button type="button" name="button" class="modal-btn">
+          <i class="material-icons md-14">info_outline</i></button>
+        <dialog class="modal-about">
+          <button type="button" name="button" class="modal-cancel">
+            <i class="material-icons sm-12">clear</i></button>
+          <h4 class="modal-title">Twitch TV</h4>
+          <p class="modal-text copy">This is an Intermediate Front End Developer project
+            from the FreeCodeCamp curriculum. The user stories to be completed are:</p>
+          <ul class="user-stories">
+            <li class="story copy">I can see whether Free Code Camp is currently
+              streaming on Twitch.tv.</li>
+            <li class="story copy">I can click the status output and be sent
+              directly to the Free Code Camp's Twitch.tv channel.</li>
+            <li class="story copy">If a Twitch user is currently streaming,
+              I can see additional details about what they are streaming.</li>
+          </ul>
+          <p class="modal-text copy">This was made using: Flexbox, SCSS, and native JS.
+            No CSS or JavaScript frameworks or libraries were used.
+            The code can be seen on
+            <a href="https://github.com/D-Pagey/twitchtv" target="_blank" class="link">
+              Github</a>.</p>
+        </dialog>
+      </div>
+
       <h1 class="main-title">Twitch Streamers</h1>
 
       <div class="stream-container" id="freecodecamp-div">
@@ -59,9 +88,18 @@
         <p class="stream-status-offline" id="rainbow6">Offline</p>
       </div>
 
+      <!-- Footer -->
+      <div class="footer--not-fixed" id="foot">
+        <p>Written and coded by
+          <a href="https://www.freecodecamp.org/d-pagey" target="_blank" class="freecodecamp link">
+            Pagey</a></p>
+      </div>
+
     </div>
 
-    <script type="text/javascript" src="scripts.js"></script>
+
+
+    <script src="scripts.js"></script>
   </body>
 
 </html>

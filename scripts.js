@@ -1,5 +1,13 @@
 const url = "https://wind-bow.glitch.me/twitch-api/streams/";
-const user = ["freecodecamp", "macie_jay", "yo_boy_roy", "rainbow6", "p4wnyhof", "tsm_viss", "edberg"];
+const user = [
+  "freecodecamp",
+  "macie_jay",
+  "yo_boy_roy",
+  "rainbow6",
+  "p4wnyhof",
+  "tsm_viss",
+  "edberg"
+];
 const urlEnd = "?callback=";
 
 function extractJson(data) {
@@ -45,3 +53,16 @@ const finalUrl = url + element + urlEnd;
     })
 
 });
+
+// Modal Functionality
+const modalBtn = document.getElementsByClassName('modal-btn');
+const modal = document.getElementsByClassName('modal-about');
+const button = document.getElementsByClassName('modal-cancel');
+
+modalBtn[0].addEventListener('click', function() {
+  modal[0].showModal();
+});
+
+button[0].addEventListener('click', function() {
+  modal[0].close();
+})
