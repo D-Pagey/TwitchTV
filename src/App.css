@@ -1,0 +1,11 @@
+.App {
+  align-items: center;
+  background-color: #BE90D4;
+  border: 2px solid black;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  margin: .5rem auto;
+  max-width: 500px;
+  width: 95%;
+}
