@@ -7,12 +7,18 @@ import Stream from './components/Stream';
 import Footer from './components/Footer';
 import rawData from './components/Stream/RawData.js';
 
+const usernames = [];
+
+rawData().forEach(element => {
+  usernames.push(element.username);
+})
+
 class App extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      description: []
+      description: ''
     }
 
     this.fetchData = this.fetchData.bind(this);
@@ -34,8 +40,10 @@ class App extends Component {
   }
 
   componentDidMount() {
-    console.log(rawData()[6]);
-    this.fetchData(rawData()[6].username);
+    usernames.forEach(username => {
+      console.log(username);
+      this.fetchData(username);
+    })
 }
 
   render() {
