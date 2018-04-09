@@ -7,28 +7,26 @@ import Stream from './components/Stream';
 import Footer from './components/Footer';
 import rawData from './components/Stream/RawData.js';
 
-console.log(rawData()[6].username);
-
 class App extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      isLoading: 'false'
+      description: []
     }
 
     this.fetchData = this.fetchData.bind(this);
   }
 
-  fetchData(element) {
+  fetchData(username) {
 
-    const url = `https://wind-bow.glitch.me/twitch-api/streams/${element.username}?callback=`;
+    const url = `https://wind-bow.glitch.me/twitch-api/streams/${username}?callback=`;
 
     fetch(url)
       .then(resp => resp.json())
-      .then(data => {
-        console.log(data);
-      })
+      .then(data => this.setState({
+        description: data.stream.channel.status,
+      }))
 
       .catch(function(error) {
         console.log("Something went wrong");
@@ -36,8 +34,9 @@ class App extends Component {
   }
 
   componentDidMount() {
-    this.fetchData(rawData()[6]);
-  }
+    console.log(rawData()[6]);
+    this.fetchData(rawData()[6].username);
+}
 
   render() {
     return (
