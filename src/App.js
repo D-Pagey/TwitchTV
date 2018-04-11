@@ -24,9 +24,6 @@ class App extends Component {
     const url = `https://wind-bow.glitch.me/twitch-api/streams/${username}?callback=`;
 
     return fetch(url).then(resp => resp.json())
-      .then(data => {
-        console.log(data);
-      })
 
       .catch(function(error) {
         console.log("Something went wrong");
@@ -34,10 +31,10 @@ class App extends Component {
   }
 
   componentDidMount() {
-    const promiseList = rawData().map((user) => this.fetchData(user));
+    const promiseList = rawData().map((user) => this.fetchData(user.username));
 
     Promise.all(promiseList).then((resolvedData) => {
-      // logic for setState
+      console.log(resolvedData);
     });
   }
 
