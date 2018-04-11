@@ -37,9 +37,9 @@ export default function rawData() {
     },
     {
       key: 6,
-      name: 'P4wnyHof',
-      username: 'p4wnyhof',
-      description: 'PUBG Stream',
+      name: 'TSM Myth',
+      username: 'tsm_myth',
+      description: 'Fortnite Stream',
       status: 'Offline',
     },
     {
