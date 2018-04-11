@@ -7,14 +7,13 @@ import Stream from './components/Stream';
 import Footer from './components/Footer';
 import rawData from './components/Stream/RawData.js';
 
-console.log(rawData()[6].username);
-
 class App extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      isLoading: 'false'
+      isLoading: 'false',
+      rawData: rawData()
     }
 
     this.fetchData = this.fetchData.bind(this);
@@ -24,8 +23,7 @@ class App extends Component {
 
     const url = `https://wind-bow.glitch.me/twitch-api/streams/${element.username}?callback=`;
 
-    fetch(url)
-      .then(resp => resp.json())
+    return fetch(url).then(resp => resp.json())
       .then(data => {
         console.log(data);
       })
@@ -36,14 +34,18 @@ class App extends Component {
   }
 
   componentDidMount() {
-    this.fetchData(rawData()[6]);
+    const promiseList = rawData().map((user) => this.fetchData(user));
+
+    Promise.all(promiseList).then((resolvedData) => {
+      // logic for setState
+    });
   }
 
   render() {
     return (
       <div className="App">
-        <Header />  
-        <Stream />
+        <Header />
+        <Stream rawData={this.state.rawData}/>
         <Footer />
       </div>
     );
