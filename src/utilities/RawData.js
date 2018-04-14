@@ -16,39 +16,39 @@ export default function rawData() {
     },
     {
       key: 3,
-      name: 'TSM Viss',
-      username: 'tsm_viss',
-      description: 'PUBG Stream',
-      status: 'Offline',
-    },
-    {
-      key: 4,
       name: 'Yo Boy Roy',
       username: 'yo_boy_roy',
       description: 'RB6 Stream',
       status: 'Offline',
     },
     {
-      key: 5,
-      name: 'Rainbow 6',
-      username: 'rainbow6',
+      key: 4,
+      name: 'P4wnyHof',
+      username: 'p4wnyhof',
       description: 'PUBG Stream',
       status: 'Offline',
     },
     {
-      key: 6,
-      name: 'TSM Myth',
-      username: 'tsm_myth',
+      key: 5,
+      name: 'TSM Viss',
+      username: 'tsm_viss',
       description: 'Fortnite Stream',
       status: 'Offline',
     },
     {
-      key: 7,
+      key: 6,
       name: 'Edberg',
       username: 'edberg',
       description: 'PUBG Stream',
       status: 'Offline',
     },
+    {
+      key: 7,
+      name: 'Rainbow 6',
+      username: 'rainbow6',
+      description: 'PUBG Stream',
+      status: 'Offline',
+    }
   ];
   return streamData;
 }

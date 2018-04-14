@@ -5,14 +5,13 @@ import './App.css';
 import Header from './components/Header';
 import Stream from './components/Stream';
 import Footer from './components/Footer';
-import rawData from './components/Stream/RawData.js';
+import rawData from './utilities/RawData.js';
 
 class App extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      isLoading: 'false',
       rawData: rawData()
     }
 
@@ -31,10 +30,15 @@ class App extends Component {
   }
 
   componentDidMount() {
+    console.log(this.state.rawData[2].username);
     const promiseList = rawData().map((user) => this.fetchData(user.username));
 
     Promise.all(promiseList).then((resolvedData) => {
-      console.log(resolvedData);
+      resolvedData.forEach(function (element, index) {
+        if (element.stream) {
+          console.log(element, index);
+        }
+      })
     });
   }
 
@@ -42,7 +46,7 @@ class App extends Component {
     return (
       <div className="App">
         <Header />
-        <Stream rawData={this.state.rawData}/>
+        <Stream rawData={this.state.rawData} />
         <Footer />
       </div>
     );
