@@ -12,7 +12,8 @@ class App extends Component {
     super(props);
 
     this.state = {
-      rawData: rawData()
+      rawData: rawData(),
+      test: ''
     }
 
     this.fetchData = this.fetchData.bind(this);
@@ -30,16 +31,20 @@ class App extends Component {
   }
 
   componentDidMount() {
-    console.log(this.state.rawData[2].username);
     const promiseList = rawData().map((user) => this.fetchData(user.username));
 
     Promise.all(promiseList).then((resolvedData) => {
       resolvedData.forEach(function (element, index) {
         if (element.stream) {
-          console.log(element, index);
+          console.log(element.stream.channel.status, index);
         }
-      })
+      });
+
+      console.log(this.state.rawData);
+      
     });
+
+
   }
 
   render() {
