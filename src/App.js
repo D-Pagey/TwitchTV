@@ -32,19 +32,18 @@ class App extends Component {
 
   componentDidMount() {
     const promiseList = rawData().map((user) => this.fetchData(user.username));
+    var component = this;
 
     Promise.all(promiseList).then((resolvedData) => {
       resolvedData.forEach(function (element, index) {
         if (element.stream) {
           console.log(element.stream.channel.status, index);
+          component.setState({
+            test: 'Updating state'
+          })
         }
       });
-
-      console.log(this.state.rawData);
-      
     });
-
-
   }
 
   render() {
