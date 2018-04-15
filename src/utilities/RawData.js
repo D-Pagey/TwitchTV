@@ -44,9 +44,9 @@ export default function rawData() {
     },
     {
       key: 7,
-      name: 'Rainbow 6',
-      username: 'rainbow6',
-      description: 'PUBG Stream',
+      name: 'Walking Dead',
+      username: 'amcthewalkingdeaduniverse',
+      description: 'Test Stream',
       status: 'Offline',
     }
   ];
