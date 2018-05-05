@@ -13,37 +13,39 @@ class App extends Component {
 
     this.state = {
       rawData: rawData(),
-      test: ''
     }
 
     this.fetchData = this.fetchData.bind(this);
   }
 
-  fetchData(username) {
+  fetchData(object) {
 
-    const url = `https://wind-bow.glitch.me/twitch-api/streams/${username}?callback=`;
+    const url = `https://wind-bow.glitch.me/twitch-api/streams/${object.username}?callback=`;
 
-    return fetch(url).then(resp => resp.json())
+    return fetch(url)
+      .then(resp => resp.json())
+      .then(data => {
+        console.log(data);
+        const test = {
+          'description': data.stream.channel.status,
+          'key': object.key,
+          'name': object.name,
+          'status': object.status,
+          'username': data.stream.channel.name
+        }
+        console.log(test);
+        this.setState({ test })
+      })
+
+
 
       .catch(function(error) {
-        console.log("Something went wrong");
+        console.log("Something went wrong - " + error);
       })
   }
 
   componentDidMount() {
-    const promiseList = rawData().map((user) => this.fetchData(user.username));
-    const component = this;
-
-    Promise.all(promiseList).then((resolvedData) => {
-      resolvedData.forEach(function (element, index) {
-        if (element.stream) {
-          console.log(element.stream.channel.status, index);
-          component.setState(prevState => ({
-            rawData: [...prevState.rawData, 55555]
-        }))
-        }
-      });
-    });
+    this.fetchData(this.state.rawData[2]);
   }
 
   render() {
