@@ -1,3 +1,3 @@
-import Stream from './Stream.js';
+import StreamList from './Stream.js';
 
-export default Stream;
+export default StreamList;

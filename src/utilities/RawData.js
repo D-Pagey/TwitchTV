@@ -44,9 +44,9 @@ export default function rawData() {
     },
     {
       key: 7,
-      name: 'Walking Dead',
-      username: 'amcthewalkingdeaduniverse',
-      description: 'Test Stream',
+      name: 'Rainbow 6',
+      username: 'rainbow6',
+      description: 'RB6 Stream',
       status: 'Offline',
     }
   ];

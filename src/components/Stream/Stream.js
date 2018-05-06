@@ -2,19 +2,36 @@ import React from 'react';
 
 import './Stream.css';
 
-function Stream(props) {
+function Stream({data}) {
 
-  let streamers;
+  console.log(data);
 
-    streamers = props.rawData.map((element) => (
-    <div className='stream-container' key={element.key}>
-      <h3 className='stream-title'>{element.name}</h3>
-      <p className='stream-description'>{element.description}</p>
-      <p className='stream-status'>{element.status}</p>
-    </div>
-    ))
+  return (
 
-    return <main>{streamers}</main>;
+    <li className='stream-container'>
+    <h3 className='stream-title'>{data.name}</h3>
+       <p className='stream-description'>{data.description}</p>
+        <p className='stream-status'>{data.status}</p>
+     </li>
+
+    // <li className='stream-container'>
+    //     <h3 className='stream-title'>{data.streams.freecodecamp.name}</h3>
+    //   <p className='stream-description'>{data.streams.freecodecamp.description}</p>
+    //    <p className='stream-status'>{data.streams.freecodecamp.status}</p>
+    // </li>
+  )
 }
 
-export default Stream;
+function StreamList({streams}) {
+
+  console.log(streams.freecodecamp);
+
+  return (
+    <ul>
+      <Stream data={streams.freecodecamp}/>
+      <Stream data={streams.edberg}/>     
+    </ul>
+  )
+}
+
+export default StreamList;
