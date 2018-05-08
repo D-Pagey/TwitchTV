@@ -1,5 +1,4 @@
-export default function rawData() {
-    const streamData = [
+export const streamData = [
     {
       key: 1,
       name: 'FreeCodeCamp',
@@ -23,9 +22,9 @@ export default function rawData() {
     },
     {
       key: 4,
-      name: 'P4wnyHof',
-      username: 'p4wnyhof',
-      description: 'PUBG Stream',
+      name: 'Pengu',
+      username: 'pengu',
+      description: 'RB6 Stream',
       status: 'Offline',
     },
     {
@@ -50,5 +49,3 @@ export default function rawData() {
       status: 'Offline',
     }
   ];
-  return streamData;
-}
