@@ -14,6 +14,7 @@ class App extends Component {
     this.state = {...streamData};
 
     this.fetchData = this.fetchData.bind(this);
+    this.streamUsernames = this.streamUsernames.bind(this);
   }
 
   fetchData(username) {
@@ -23,6 +24,12 @@ class App extends Component {
       .then(resp => resp.json())
       .then(data => {
         console.log(data.stream.channel);
+
+        
+    // this.setState({ [username] : data })
+
+
+
       })
 
       .catch(function(error) {
@@ -30,8 +37,15 @@ class App extends Component {
       })
   }
 
+  streamUsernames() {
+    const usernames = Object.keys(this.state);
+    return usernames;
+  }
+
   componentDidMount() {
-    this.fetchData('pengu');
+    this.streamUsernames().forEach((element) => {
+      this.fetchData(element);
+    })
   }
 
   render() {
@@ -46,3 +60,5 @@ class App extends Component {
 }
 
 export default App;
+
+// console warning regarding keys
