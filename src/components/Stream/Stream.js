@@ -6,7 +6,8 @@ function Stream({data}) {
   return (
     <li className='stream-container'>
       <h3 className='stream-title'>{data.name}</h3>
-      <p className='stream-description'>{data.description}</p>
+      <a href={data.url} target='_blank' className='stream-link'><p className='stream-description'>
+      {data.description}</p></a>
       <p className='stream-status'>{data.status}</p>
     </li>
   )

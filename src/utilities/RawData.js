@@ -27,17 +27,17 @@ export const streamData = {
     description: 'RB6 Stream',
     status: 'Offline'
   },
-  tsm_viss: {
+  shroud: {
     key: 5,
-    name: 'TSM Viss',
-    username: 'tsm_viss',
-    description: 'Fortnite Stream',
+    name: 'Shroud',
+    username: 'shroud',
+    description: 'Legend',
     status: 'Offline'
   },
-  edberg: {
+  drdisrespectlive: {
     key: 6,
-    name: 'Edberg',
-    username: 'edberg',
+    name: 'Dr Disrespect',
+    username: 'drdisrespectlive',
     description: 'PUBG Stream',
     status: 'Offline'
   },

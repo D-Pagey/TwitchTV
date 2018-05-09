@@ -23,12 +23,17 @@ class App extends Component {
     return fetch(url)
       .then(resp => resp.json())
       .then(data => {
-        console.log(data.stream.channel);
 
+        let newData = {
+          key: 1,
+          name: data.stream.channel.display_name,
+          username: username,
+          description: data.stream.channel.status.slice(0, 27) + "...",
+          status: 'Online',
+          url: data.stream.channel.url
+        }
         
-    // this.setState({ [username] : data })
-
-
+        this.setState({ [username]: newData })
 
       })
 
@@ -38,8 +43,7 @@ class App extends Component {
   }
 
   streamUsernames() {
-    const usernames = Object.keys(this.state);
-    return usernames;
+    return Object.keys(this.state);
   }
 
   componentDidMount() {
@@ -61,4 +65,8 @@ class App extends Component {
 
 export default App;
 
-// console warning regarding keys
+/** To Do
+ * Fix CSS
+ * Modal
+ * Refactor
+ */

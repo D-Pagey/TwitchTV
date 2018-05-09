@@ -28,3 +28,7 @@
   margin: 0 .5rem .5rem 0;
   padding: 0;
 }
+
+.stream-link {
+  text-decoration: none;
+}
