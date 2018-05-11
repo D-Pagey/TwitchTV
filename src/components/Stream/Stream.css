@@ -1,10 +1,10 @@
 .stream-list {
+  align-items: center;
   display: flex;
   flex-direction: column;
-  align-items: center;
   margin: 0;
-  padding: 0;
   max-width: 95%;
+  padding: 0;
 }
 
 .stream {
@@ -13,31 +13,48 @@
   border-radius: 5px;
   display: flex;
   flex-wrap: wrap;
+  justify-content: space-between;
   margin: .5rem 0;
   width: 100%;
 }
 
+.stream-link {
+  color: inherit;
+  text-decoration: none;
+}
+
 .stream-title {
   font-size: 1rem;
-  text-align: center;
   margin: .5rem 0;
   padding: 0;
+  text-align: center;
   width: 100%;
 }   
 
-.stream-description {
+.stream-description-offline {
   flex-grow: 1;
   font-style: italic;
   margin: 0 0 .5rem .5rem;
   padding: 0;
 }
 
-.stream-status {
-  color: red;
-  margin: 0 .5rem .5rem 0;
+.stream-description-online {
+  color: blue;
+  flex-grow: 1;
+  font-style: italic;
+  margin: 0 0 .5rem .5rem;
   padding: 0;
 }
 
-.stream-link {
-  text-decoration: none;
+.stream-offline {
+  color: red;
+  margin: 0;
+  padding-right: .5rem;
+}
+
+.stream-online {
+  color: green;
+  font-weight: 600;
+  margin: 0;
+  padding-right: .5rem;
 }

@@ -28,8 +28,8 @@ class App extends Component {
           key: 1,
           name: data.stream.channel.display_name,
           username: username,
-          description: data.stream.channel.status.slice(0, 27) + "...",
-          status: 'Online',
+          description: data.stream.channel.status.slice(0, 22) + "...",
+          status: 'online',
           url: data.stream.channel.url
         }
         
