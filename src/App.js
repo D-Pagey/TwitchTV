@@ -69,4 +69,6 @@ export default App;
  * Fix CSS
  * Modal
  * Refactor
+ * 19 problems in file
+ * Console warning regarding keys
  */
