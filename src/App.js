@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 
 import './App.css';
 
+import Modal from './components/Modal';
 import Header from './components/Header';
 import StreamList from './components/Stream';
 import Footer from './components/Footer';
@@ -55,6 +56,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
+        <Modal />
         <Header />
         <StreamList streams={this.state} />
         <Footer />
@@ -64,11 +66,3 @@ class App extends Component {
 }
 
 export default App;
-
-/** To Do
- * Fix CSS
- * Modal
- * Refactor
- * 19 problems in file
- * Console warning regarding keys
- */
