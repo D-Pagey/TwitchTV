@@ -6,19 +6,12 @@ import Modal from './components/Modal';
 import Header from './components/Header';
 import StreamList from './components/Stream';
 import Footer from './components/Footer';
-import {streamData} from './utilities/rawData.js';
+import {streamData} from './utilities/RawData.js';
 
 class App extends Component {
-  constructor(props) {
-    super(props);
+  state = streamData;
 
-    this.state = {...streamData};
-
-    this.fetchData = this.fetchData.bind(this);
-    this.streamUsernames = this.streamUsernames.bind(this);
-  }
-
-  fetchData(username) {
+  fetchData = (username) => {
     const url = `https://wind-bow.glitch.me/twitch-api/streams/${username}?callback=`;
 
     return fetch(url)
@@ -33,7 +26,7 @@ class App extends Component {
           status: 'online',
           url: data.stream.channel.url
         }
-        
+
         this.setState({ [username]: newData })
 
       })
@@ -43,7 +36,7 @@ class App extends Component {
       })
   }
 
-  streamUsernames() {
+  streamUsernames = () => {
     return Object.keys(this.state);
   }
 
