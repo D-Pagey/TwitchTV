@@ -2,10 +2,10 @@ import React, { Component } from 'react';
 
 import './App.css';
 
-import Modal from './components/Modal';
-import Header from './components/Header';
-import StreamList from './components/Stream';
-import Footer from './components/Footer';
+import Modal from './components/Container/Modal';
+import Header from './components/Presentational/Header';
+import StreamList from './components/Presentational/Stream';
+import Footer from './components/Presentational/Footer';
 import {streamData} from './utilities/RawData.js';
 
 class App extends Component {
@@ -19,7 +19,6 @@ class App extends Component {
       .then(data => {
 
         let newData = {
-          key: 1,
           name: data.stream.channel.display_name,
           username: username,
           description: data.stream.channel.status.slice(0, 22) + "...",

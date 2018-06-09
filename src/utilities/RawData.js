@@ -1,7 +1,7 @@
 export const streamData = {
-    dakotaz: {
-      name: 'dakotaz',
-      username: 'dakotaz',
+    freecodecamp: {
+      name: 'freecodecamp',
+      username: 'freecodecamp',
       description: 'Coding Stream',
       status: 'offline'
     },
@@ -26,7 +26,7 @@ export const streamData = {
     shroud: {
       name: 'Shroud',
       username: 'shroud',
-      description: 'Legend',
+      description: 'PUBG Stream',
       status: 'offline'
     },
     drdisrespectlive: {

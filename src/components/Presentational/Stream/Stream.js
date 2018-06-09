@@ -16,7 +16,8 @@ function Stream({name, status, url, description}) {
 
 function StreamList({streams}) {
   const streamsArray = Object.keys(streams).map((i) => streams[i]);
-  const streamList = streamsArray.map((stream) => <Stream key={stream.username} {...stream} />);
+  const streamList = streamsArray.map((stream) => <Stream 
+  key={stream.username} {...stream} />);
 
   return (
     <ul className='stream-list'>
